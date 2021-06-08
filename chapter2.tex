@@ -48,7 +48,7 @@ Let $x$ be a limit point of the set $E'$. Let $N_1$ be any neighborhood of $x$. 
 
 Suppose $x$ is a limit point of $E$. Then, by definition, any neighborhood of $x$ contains an element of $E$. However, this same element is a member of $\bar{E}=E\cup E'$, so that $x$ is a limit point of $\bar{E}$ as well.\\
 
-Now suppose $x$ is a limit point of $\bar{E}$. Let $N_1$ be any neighborhood of $x$. If $N_1$ contained a point of $E$ we would be done, so suppose it contains no elements of $E$. Then $N_1$ must contain an element of $E'$, say $y$. Since $N_1$ is open we can find a neighborhood of $y$, say $N_2$, such that $N_2\subset N_1$. But all neighborhoods of $y$ contain an element of $E$ - in particular, there is $z\in E$ such that $z\in N_2\subset N_1$. Thus we have shown that all neighborhoods of $x$ contain a point in $E$, making $x$ a limit point of $E$ as well.\\ \\
+Now suppose $x$ is a limit point of $\bar{E}$. Let $N_1$ be any neighborhood of $x$. If $N_1$ contained a point of $E$ we would be done, so suppose it contains no elements of $E$. Then $N_1$ must contain an element of $E'$, say $y$. Since $N_1$ is open we can find a neighborhood of $y$, say $N_2$, such that $N_2\subset N_1$. But all neighborhoods of $y$ contain an element of $E$ - in particular, there is $z\in E$ such that $z\in N_2\subset N_1$. Observe that we can choose $z\neq x$ by fixing the radius of $N_2$ to be less than $d(x,y)$. Thus we have shown that all neighborhoods of $x$ contain a point in $E$, making $x$ a limit point of $E$ as well.\\ \\
 
 The sets $E$ and $E'$ do not always have the same limit points. Consider the set $E$ of all real numbers of the form $\frac{1}{n}$, with $n\in\mathbb{N}$. It has a single limit point, this being $0$. However the singleton $E'=\{0\}$ has no limit points.
 
@@ -90,9 +90,23 @@ f)\\
 
 
 \section*{Exercise 11}
+
+\begin{enumerate}
+        \item $d_1$ breaks the triangle inequality. Consider $x = 0, y = 1, z = 2$. Then, $$d(x,y) + d(y,z) = 1 + 1 < 4 = d(x,z).$$ 
+        \item $d_2$ is a metric. It's obviously symmetric and $> 0$ for distinct $x,y$ and $0$ when $x=y$. For the triangle inequality, recall $\sqrt{a} + \sqrt{b} \geq \sqrt{a+b}$. \footnote{Everything is positive so we can square.} Then, $$\sqrt{|x-y|} + \sqrt{|y-z|} \geq \sqrt{|x-y| + |y-z|} \geq \sqrt{|x-z|}.$$
+        \item Not a metric: $d(x,y) = 0 \iff |x| = |y|$.
+        \item Not a metric: $d(x,y) = 0 \iff x = 2y$.
+        \item $d_5$ is a metric. It's obviously symmetric and $> 0$ for distinct $x,y$ and $0$ when $x=y$. For the triangle inequality, we wish to show $$\frac{|x-y|}{1 + |x-y|} + \frac{|y-z|}{1 + |y-z|} \geq \frac{|x-z|}{1 + |x-z|}.$$ Setting $p = |x-y|$, $q = |y-z|$, $r = |x-z|$, our inequality is equivalent to 
+        \begin{align}
+            &\iff (1 + r)(p(1+q) + q(1+p)) \geq r(1+p)(1+q)\
+            &\iff p + 2pq + q + r(pq -1) \geq 0.
+        \end{align}
+        If $pq > 1$, then the result holds because $p,q,r \geq 0$. If $pq < 1$, then recall $r \leq p + q$. Hence, the result still holds because $p + 2pq + q + (p+q)(pq -1) = 2pq + p^2q + pq^2 \geq 0$.
+    \end{enumerate}
+
 \section*{Exercise 12}
 
-Suppose $K$ is not compact. T
+Consider an open cover ${U\alpha}{\alpha \in A}$ of $K$. There exists open $U\alpha$ such that $0 \in U\alpha$ and $r$ such that $Nr(0) \subseteq U\alpha$. Only finitely many elements of $K$ aren't contained in $Nr(0)$: specifically $n\in K$ with $n < 1/r$. Hence, we need only take finitely many more open sets from our open cover in addition to $U\alpha$ to obtain a finite subcover.
 
 \section*{Exercise 13}
 
@@ -105,9 +119,7 @@ $S_k = 1/n + 1/k union 1/k$
 \section*{Exercise 17}
 \section*{Exercise 18}
 
-We first note that $\mathbb{Q}$ is dense in $\mathbb{R}$; between any two real numbers we can find a rational one.\\
-
-If $E$ is a nonempty perfect set in $\mathbb{R}$, then 
+Let $E$ be the set of all $x\in [0,1]$ whose decimal expansion contains only the digits $4$ and $7$. Ex. 17 tells us that $E$ is perfect. Now let $n$ have decimal expansion $0.101001000100001\dots$. Then the set $S={n+x : x\in E}$ is perfect, since we're only shifting $E$. But there is no element of $S$ which has a repeating/terminating decimal expansion, so it contains no rational points. 
 
 \section*{Exercise 19}
 
