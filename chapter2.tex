@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Baby Rudin Chapter 2 Exercises}
+\author{Shikhar Mukherji}
+\date{May 2021}
+
+
+\setlength{\parindent}{0pt}
+\begin{document}
+
+\maketitle
+
+\section*{Exercise 1}
+
+From Remark $2.11$, we have $A\subset A\cup B$, and $A\cup\emptyset=A$ for all sets $A$ and $B$. In particular, $\emptyset\subset A\cup\emptyset = A$, for all sets $A$.
+
+\section*{Exercise 2}
+
+First note that $\mathbb{Z}^n$ is countable by Theorem $2.13$.\\
+
+Now let the set of polynomials of degree $n$ with integer coefficients be $P_n$. Then, the map $f:P_n\rightarrow\mathbb{Z}^{n+1}$ sending $(a_nz^n + \dots + a_0)$ to $(a_n, \dots , a_0)$ is a bijection, showing that $P_n$ is countable. By Theorem $2.12$, the set of all polynomials with integer coefficients $P$, which is the union of all $P_n$, is countable as well.\\
+
+Finally, for an element $p\in P$, let the (finite) set of all its complex roots be $R_p$. Then the set of all algebraic numbers is
+
+$$\bigcup_{p\in P}R_p,$$
+
+which, by Theorem $2.12$, is countable.
+
+\section*{Exercise 3}
+
+If all real numbers are algebraic, then the set of reals must be countable (by Exercise $2$). However, this contradicts Theorem $2.14$, which says that the set of real numbers is uncountable.
+
+\section*{Exercise 4}
+
+If the set of irrational numbers is countable, then, by Theorem $2.12$, its union with the (countable) set of rational numbers must also be countable. However, the set of real numbers is uncountable (Theorem $2.14$) so this is impossible.
+
+\section*{Exercise 5}
+
+Let $S_0$, $S_1$, and $S_2$ be the set of all real numbers of the form $\frac{1}{n}$, $\frac{1}{n} + 1$, and $\frac{1}{n} + 2$, respectively, where $n\in\mathbb{N}$. Then the set $S_0\cup S_1\cup S_2$ is clearly bounded, and has exactly three limit points (these being $0, 1$ and $2$).
+
+\section*{Exercise 6}
+
+Let $x$ be a limit point of the set $E'$. Let $N_1$ be any neighborhood of $x$. Then $N_1$ contains a point, say $y$, of $E'$. As $N_1$ is open (by Theorem $2.19$), there exists a neighborhood of $y$, say $N_2$, contained within $N_1$. But, since $y$ is a limit point of $E$, there must be an element of $E$, say $z$, such that $z\in N_2\subset N_1$. We have shown that every neighborhood of $x$ contains a point of $E$, making $x$ is a limit point of $E$. Thus, $x\in E'$ and so $E'$ is closed.\\ \\
+
+Suppose $x$ is a limit point of $E$. Then, by definition, any neighborhood of $x$ contains an element of $E$. However, this same element is a member of $\bar{E}=E\cup E'$, so that $x$ is a limit point of $\bar{E}$ as well.\\
+
+Now suppose $x$ is a limit point of $\bar{E}$. Let $N_1$ be any neighborhood of $x$. If $N_1$ contained a point of $E$ we would be done, so suppose it contains no elements of $E$. Then $N_1$ must contain an element of $E'$, say $y$. Since $N_1$ is open we can find a neighborhood of $y$, say $N_2$, such that $N_2\subset N_1$. But all neighborhoods of $y$ contain an element of $E$ - in particular, there is $z\in E$ such that $z\in N_2\subset N_1$. Thus we have shown that all neighborhoods of $x$ contain a point in $E$, making $x$ a limit point of $E$ as well.\\ \\
+
+The sets $E$ and $E'$ do not always have the same limit points. Consider the set $E$ of all real numbers of the form $\frac{1}{n}$, with $n\in\mathbb{N}$. It has a single limit point, this being $0$. However the singleton $E'=\{0\}$ has no limit points.
+
+\section*{Exercise 7}
+
+
+
+\section*{Exercise 8}
+
+If $x\in E\subset\mathbb{R}^2$, then, since $E$ is open, there exists a neighborhood of radius $r>0$ such that $N_r(x)\subset E$. If $h\leq r$, then $N_h(x)\subset N_r(x)\subset E$. If $h>r$, then $N_r(x)\subset N_h(x)$, so $N_h(x)$ contains a point of $E$ (since neighborhoods in $\mathbb{R}^2$ cannot be singletons*). We have shown that all neighborhoods of $x$ contain a point of $E$, making $x$ a limit point of $E$.\\
+
+*If $x\in\mathbb{R}^2$ then for any $h>0$, $N_h(x)$ contains $x + \mathbf{(0, h/2)}$.
+
+\section*{Exercise 9}
+a)\\
+
+Let $x\in E^{\circ}$. Then there exists a neighborhood, $N$, of $x$ such that $N\subset E$. We claim this neighborhood consists only of interior points of $E$. Indeed, if there was a point $y\in N$ which was not an interior point, then every neighborhood of $y$ contains a point outside of $E$. However, by Theorem $2.19$, $N$ is open, so we can find a neighborhood of $y$, say $N'$, such that $N'\subset N$. But then $N'$ cannot contain a point outside of $E$, and so $y$ must be an interior point. Thus we have shown that $N$ contains only interior points of $E$, so that $N\subset E^{\circ}$, and $E^{\circ}$ is open.\\
+
+b)\\
+
+If $E^{\circ}=E$, then part (a) tells us $E$ must be open.\\
+
+If $E$ is open, then we claim that $E$ consists only of its interior points. Indeed, if $x\in E$ was not an interior point, then every neighborhood of $x$ would contain a point outside of $E$. However, by definition, we can find a neighborhood, $N$, of $x$ so that $N\subset E$, and so $x$ is in fact an interior point of $E$. But then $E=E^{\circ}$.\\
+
+c)\\
+
+Let $x\in G$. Then, as $G$ is open, we can find a neighborhood, $N$, of $x$ such that $N\subset G\subset E$. Thus $x$ is an interior point of $E$, so that $x\in E^{\circ}$.\\
+
+d)\\
+
+Let $M$ be the complement of $E^{\circ}$. By part (a), $E^{\circ}$ is open, so that $M$ is closed (Theorem $2.23$). But then, by Theorem $2.27$, $M=\bar{M}$.\\
+
+e)\\
+
+f)\\
+
+\section*{Exercise 10}
+
+
+
+\section*{Exercise 11}
+\section*{Exercise 12}
+
+Suppose $K$ is not compact. T
+
+\section*{Exercise 13}
+
+$S_k = 1/n + 1/k union 1/k$
+
+\section*{Exercise 14}
+
+\section*{Exercise 15}
+\section*{Exercise 16}
+\section*{Exercise 17}
+\section*{Exercise 18}
+
+We first note that $\mathbb{Q}$ is dense in $\mathbb{R}$; between any two real numbers we can find a rational one.\\
+
+If $E$ is a nonempty perfect set in $\mathbb{R}$, then 
+
+\section*{Exercise 19}
+
+a)\\
+
+From Theorem $2.27$ we know that $A=\bar{A}$ and $B=\bar{B}$ since they are both closed. Thus, $A\cap\bar{B}=A\cap B=\emptyset$ and $\bar{A}\cap B=A\cap B=\emptyset$, so they are separated.\\
+
+b)\\
+
+It suffices to show that if $x\in A$ then $x\notin B'$ (the reverse case is the same since both $A$ and $B$ are open). Indeed, since $A$ is open, there exists a neighborhood $N$ of $x$ so that $N\subset A$. But this neighborhood has no intersection with $B$, so $x$ cannot be a limit point of $B$, and so $x\notin B'$, as desired.\\
+
+c)\\
+
+First note that $A$ and $B$ are disjoint, because $x\in A \implies d(p,x)<\delta \implies x\notin B$. We aim to show that both $A$ and $B$ are open, which gives the desired conclusion by part (b). Firstly, $A=N_{\delta}(p)$, so by Theorem $2.19$ it is open. Next, suppose $q\in B$ and let $t=d(p,q)-\delta$. We claim that $N_t(q)\subset B$. Indeed, if $x\in N_t(q)$, then $d(x,q)<t=d(p,q)-\delta$. Then, by the triangle inequality,
+
+$$d(p,q)\leq d(p,x)+d(x,q)$$
+$$\implies d(p,x)\geq d(p,q)-d(x,q)$$
+$$>d(p,q) - (d(p,q) - \delta)$$
+$$=\delta,$$
+
+so that $x\in B$. We have shown that every point of $B$ has a neighborhood contained in $B$, so it is open.\\
+
+d)\\
+
+If the metric space $X$ is connected, we will show that it can neither be finite nor countable by constructing non-empty separated sets $A$ and $B$ such that $A\cup B=X$ in each of these cases. If $X$ is finite, it may be written as $\{x_1, x_2, \dots, x_n \}$. Set $A=\{x_1\}$ and $B=\{x_2,\dots,x_n\}$. These are both closed and disjoint, so part (a) tells us that they are separated. However, $A\cup B=X$, which is a contradiction. If $X$ is countable, it may be written as $\{x_1, x_2, \dots \}$.
+
+\section*{Exercise 20}
+
+
+
+\section*{Exercise 21}
+
+
+
+\end{document}
